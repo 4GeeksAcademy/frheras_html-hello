@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <!-- Metadatos SEO -->
+  <title>El Barrio — El sentimiento hecho música</title>
+  <meta name="description"
+        content="El Barrio, cantante y compositor de Cádiz: trayectoria musical y próximas presentaciones de la gira 30 de 2027. Propuesta web no oficial con fines educativos.">
+
+  <!-- Datos estructurados Schema.org (JSON-LD).
+       Se incluyen únicamente los datos respaldados por la información disponible en la página.
+       Los conciertos (MusicEvent) NO se marcan porque sus fechas, recintos y enlaces
+       oficiales aún no han sido verificados antes de la publicación. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "#el-barrio",
+        "name": "El Barrio",
+        "alternateName": "José Luis Figuereo Franco",
+        "jobTitle": "Cantante y compositor",
+        "birthPlace": {
+          "@type": "Place",
+          "name": "Cádiz"
+        },
+        "description": "Cantante y compositor nacido en Cádiz cuya identidad musical está estrechamente vinculada al flamenco y al rock andaluz."
+      },
+      {
+        "@type": "MusicAlbum",
+        "name": "Yo sueno flamenco",
+        "byArtist": { "@id": "#el-barrio" }
+      },
+      {
+        "@type": "MusicAlbum",
+        "name": "Ángel malherido",
+        "byArtist": { "@id": "#el-barrio" }
+      },
+      {
+        "@type": "MusicAlbum",
+        "name": "Hijo del Levante",
+        "byArtist": { "@id": "#el-barrio" }
+      },
+      {
+        "@type": "MusicAlbum",
+        "name": "El danzar de las mariposas",
+        "byArtist": { "@id": "#el-barrio" }
+      },
+      {
+        "@type": "MusicAlbum",
+        "name": "Atemporal",
+        "byArtist": { "@id": "#el-barrio" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Vinculación de la hoja de estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Enlace para saltar directamente al contenido principal (accesibilidad por teclado) -->
+  <a class="enlace-saltar" href="#contenido-principal">Saltar al contenido</a>
+
+  <!-- Cabecera y navegación principal -->
+  <header class="cabecera">
+    <nav aria-label="Navegación principal">
+      <ul class="nav-lista">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#trayectoria">Trayectoria</a></li>
+        <li><a href="#proximas-presentaciones">Próximas presentaciones</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido-principal">
+
+    <!-- 1. Inicio · Portada -->
+    <section id="inicio" class="portada" aria-labelledby="titulo-principal">
+      <div class="portada-contenido">
+        <h1 id="titulo-principal">El Barrio</h1>
+        <h2 class="portada-subtitulo">El sentimiento hecho música</h2>
+        <p class="portada-texto">
+          Desde Cádiz, una forma única de sentir y entender la música. El flamenco,
+          el rock andaluz y las historias que forman parte de la vida se encuentran
+          en un universo musical propio.
+        </p>
+        <p class="portada-texto">
+          Descubre su trayectoria, recorre sus canciones y encuentra la próxima
+          oportunidad para vivir su música en directo.
+        </p>
+        <div class="portada-acciones">
+          <a class="boton boton-primario" href="#sobre-mi">Descubre su historia.</a>
+          <a class="boton boton-secundario" href="#proximas-presentaciones">Próximos conciertos.</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Sobre mí -->
+    <section id="sobre-mi" class="seccion" aria-labelledby="titulo-sobre-mi">
+      <div class="seccion-contenido">
+        <h2 id="titulo-sobre-mi">Detrás de El Barrio</h2>
+        <h3 class="seccion-subtitulo">Cádiz como origen. La música como lenguaje.</h3>
+
+        <p>
+          José Luis Figuereo Franco, conocido artísticamente como El Barrio, es un cantante
+          y compositor nacido en Cádiz cuya identidad musical está estrechamente vinculada
+          al flamenco y al rock andaluz.
+        </p>
+        <p>
+          Su relación con la guitarra comenzó durante la infancia y su recorrido artístico se
+          inició en el mundo de los tablaos flamencos. Con el tiempo, desarrolló un estilo
+          propio que combina raíces flamencas, sonidos del rock andaluz y letras que conectan
+          con las experiencias y emociones de la vida cotidiana.
+        </p>
+        <p>
+          Su música construye un universo reconocible, en el que las raíces, los sentimientos
+          y las historias personales ocupan un lugar central.
+        </p>
+        <p>
+          Una trayectoria que comenzó en Cádiz y que, desde su debut discográfico en 1996, ha
+          seguido creciendo junto a su público.
+        </p>
+
+        <p class="frase-cierre">Una identidad propia, una historia musical y un camino que continúa.</p>
+      </div>
+    </section>
+
+    <!-- 3. Trayectoria -->
+    <section id="trayectoria" class="seccion seccion-cronologia" aria-labelledby="titulo-trayectoria">
+      <div class="seccion-contenido">
+        <h2 id="titulo-trayectoria">Una historia escrita canción a canción</h2>
+        <p class="seccion-introduccion">
+          Desde sus primeros pasos en el flamenco hasta la consolidación de un sonido propio,
+          la trayectoria de El Barrio refleja una evolución artística ligada a sus raíces.
+        </p>
+
+        <ol class="cronologia">
+          <li class="cronologia-item">
+            <h3 class="cronologia-titulo">
+              <span class="cronologia-anio">1996</span> · <span class="cronologia-nombre">El comienzo discográfico</span>
+            </h3>
+            <p>Publica <cite>Yo sueno flamenco</cite>, el álbum con el que inicia su trayectoria discográfica.</p>
+          </li>
+          <li class="cronologia-item">
+            <h3 class="cronologia-titulo">
+              <span class="cronologia-anio">2003</span> · <span class="cronologia-nombre">Ángel malherido</span>
+            </h3>
+            <p>Lanza <cite>Ángel malherido</cite>, uno de los títulos destacados de su discografía.</p>
+          </li>
+          <li class="cronologia-item">
+            <h3 class="cronologia-titulo">
+              <span class="cronologia-anio">2014</span> · <span class="cronologia-nombre">Hijo del Levante</span>
+            </h3>
+            <p>Publica <cite>Hijo del Levante</cite>, un nuevo capítulo en su recorrido musical.</p>
+          </li>
+          <li class="cronologia-item">
+            <h3 class="cronologia-titulo">
+              <span class="cronologia-anio">2019</span> · <span class="cronologia-nombre">El danzar de las mariposas</span>
+            </h3>
+            <p>Presenta un nuevo trabajo discográfico que amplía su catálogo de canciones.</p>
+          </li>
+          <li class="cronologia-item">
+            <h3 class="cronologia-titulo">
+              <span class="cronologia-anio">2022</span> · <span class="cronologia-nombre">Atemporal</span>
+            </h3>
+            <p>Publica <cite>Atemporal</cite>, un álbum que conecta su identidad musical con nuevas composiciones.</p>
+          </li>
+          <li class="cronologia-item">
+            <h3 class="cronologia-titulo">
+              <span class="cronologia-anio">2027</span> · <span class="cronologia-nombre">Una nueva etapa en directo</span>
+            </h3>
+            <p>La gira <cite>30</cite> de 2027 celebra tres décadas de trayectoria discográfica y acerca de nuevo su música a los escenarios.</p>
+          </li>
+        </ol>
+
+        <p class="frase-cierre">Treinta años de música, evolución y conexión con el público.</p>
+      </div>
+    </section>
+
+    <!-- 4. Próximas presentaciones -->
+    <section id="proximas-presentaciones" class="seccion seccion-conciertos" aria-labelledby="titulo-conciertos">
+      <div class="seccion-contenido">
+        <h2 id="titulo-conciertos">La música se vive en directo</h2>
+        <h3 class="seccion-subtitulo">Gira 30 · 2027</h3>
+
+        <p>
+          Tres décadas de canciones se encuentran con el público en una gira que celebra el
+          recorrido musical de El Barrio.
+        </p>
+        <p>
+          Una oportunidad para volver a escuchar sus canciones en directo, recordar diferentes
+          etapas de su discografía y compartir la experiencia con quienes han acompañado su
+          música a lo largo de los años.
+        </p>
+
+        <div class="conciertos">
+          <article class="concierto">
+            <h4 class="concierto-titulo">
+              <span class="concierto-ciudad">Madrid</span>
+              <span class="concierto-separador"> · </span>
+              <span class="concierto-fecha">5 de febrero de 2027</span>
+            </h4>
+            <p class="concierto-recinto"><strong>Recinto:</strong> <span>Movistar Arena</span>.</p>
+          </article>
+
+          <article class="concierto">
+            <h4 class="concierto-titulo">
+              <span class="concierto-ciudad">Barcelona</span>
+              <span class="concierto-separador"> · </span>
+              <span class="concierto-fecha">26 de febrero de 2027</span>
+            </h4>
+            <p class="concierto-recinto"><strong>Recinto:</strong> <span>Palau Sant Jordi</span>.</p>
+          </article>
+
+          <article class="concierto">
+            <h4 class="concierto-titulo">
+              <span class="concierto-ciudad">Valencia</span>
+              <span class="concierto-separador"> · </span>
+              <span class="concierto-fecha">3 de abril de 2027</span>
+            </h4>
+            <p class="concierto-recinto"><strong>Recinto:</strong> <span>Roig Arena</span>.</p>
+          </article>
+        </div>
+
+        <p class="conciertos-cierre">
+          Consulta la información de cada concierto y accede a los canales oficiales de venta
+          de entradas.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 5. Pie de página -->
+  <footer class="pie-pagina">
+    <div class="pie-contenido">
+      <p class="pie-marca">El Barrio</p>
+
+      <nav class="pie-nav" aria-label="Navegación del pie de página">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#trayectoria">Trayectoria</a></li>
+          <li><a href="#proximas-presentaciones">Próximas presentaciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

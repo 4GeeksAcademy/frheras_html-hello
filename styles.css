@@ -1,0 +1,508 @@
+/* ============================================================
+   El Barrio — Hoja de estilos
+   Landing page educativa (HTML y CSS únicamente)
+   Secciones: Portada · Sobre mí · Trayectoria · Conciertos · Pie
+   ============================================================ */
+
+/* ----- 1. Variables y valores base ----- */
+:root {
+  /* Paleta: inspirada en el carácter musical y flamenco, sin pretender
+     ser la identidad oficial del artista. */
+  --color-fondo: #1b1314;        /* Fondo general, granate oscuro */
+  --color-fondo-claro: #241a1c;  /* Fondos de bloques secundarios */
+  --color-texto: #f4ece6;        /* Texto principal, tono cálido claro */
+  --color-texto-suave: #d8c9bd;  /* Texto secundario */
+  --color-acento: #d2492a;       /* Rojo flamenco para destacados */
+  --color-acento-suave: #e8916f; /* Variante clara del acento */
+  --color-borde: rgba(244, 236, 230, 0.18); /* Bordes sutiles */
+  --color-enlace-foco: #ffcf9e;  /* Indicador de foco bien visible */
+
+  --max-ancho: 960px;            /* Ancho máximo del contenido */
+  --radio-borde: 14px;           /* Esquinas redondeadas */
+
+  --fuente-principal: "Trebuchet MS", "Lucida Sans Unicode", "Segoe UI",
+                      Verdana, Arial, sans-serif;
+  --fuente-titulos: "Georgia", "Times New Roman", serif;
+
+  --tamano-h1: 4.2rem;
+  --tamano-h2: 2.6rem;
+  --tamano-base: 1.125rem;
+}
+
+/* ----- 2. Reinicio básico y valores globales ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Evita que el contenido quede oculto bajo la cabecera fija */
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-principal);
+  font-size: var(--tamano-base);
+  line-height: 1.7;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+/* Jerarquía tipográfica clara */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fuente-titulos);
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+/* Enlaces globales */
+a {
+  color: var(--color-acento-suave);
+}
+a:hover {
+  color: var(--color-enlace-foco);
+}
+a:focus-visible {
+  outline: 3px solid var(--color-enlace-foco);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ----- 3. Accesibilidad: enlace «Saltar al contenido» ----- */
+.enlace-saltar {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-enlace-foco);
+  color: #1b1314;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+}
+.enlace-saltar:focus {
+  top: 0;
+}
+
+/* ----- 4. Cabecera y navegación ----- */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(27, 19, 20, 0.92);
+  border-bottom: 1px solid var(--color-borde);
+  backdrop-filter: blur(4px);
+}
+
+.nav-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: var(--max-ancho);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.nav-lista a {
+  display: block;
+  padding: 1rem 1.1rem;
+  color: var(--color-texto);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.nav-lista a:hover {
+  color: var(--color-enlace-foco);
+  background-color: rgba(244, 236, 230, 0.08);
+}
+
+/* ----- 5. Secciones generales ----- */
+.seccion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;             /* Aproximadamente una pantalla de alto */
+  min-height: 100svh;            /* Ajuste para pantallas móviles dinámicas */
+  padding: 5.5rem 1.25rem;       /* Margen superior para la cabecera fija */
+}
+
+.seccion-contenido {
+  width: 100%;
+  max-width: var(--max-ancho);
+}
+
+/* Alternancia de fondos para separar visualmente las secciones */
+.seccion-cronologia {
+  background-color: var(--color-fondo-claro);
+}
+
+h2 {
+  font-size: var(--tamano-h2);
+  color: var(--color-texto);
+}
+
+.seccion-subtitulo {
+  font-family: var(--fuente-principal);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-acento-suave);
+  margin-bottom: 1.75rem;
+}
+
+.seccion-introduccion {
+  font-size: 1.25rem;
+  color: var(--color-texto-suave);
+  max-width: 70ch;
+}
+
+.frase-cierre {
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--color-enlace-foco);
+  border-left: 4px solid var(--color-acento);
+  padding-left: 1.25rem;
+  margin-top: 2.5rem;
+  max-width: 60ch;
+}
+
+/* ----- 6. Portada (Inicio) ----- */
+.portada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 6rem 1.25rem 4rem;
+  /* Fondo decorativo creado solo con CSS (degradados), sin imágenes
+     inventadas del artista. */
+  background:
+    radial-gradient(ellipse at 18% 20%, rgba(210, 73, 42, 0.28), transparent 55%),
+    radial-gradient(ellipse at 85% 75%, rgba(210, 73, 42, 0.18), transparent 60%),
+    linear-gradient(180deg, #221619 0%, #1b1314 100%);
+  text-align: center;
+}
+
+.portada-contenido {
+  max-width: var(--max-ancho);
+}
+
+#titulo-principal {
+  font-size: clamp(3rem, 11vw, var(--tamano-h1));
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.15em;
+  /* Texto con degradado para un acabado destacado sin usar imágenes */
+  background: linear-gradient(120deg, var(--color-texto) 30%, var(--color-acento-suave));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--color-texto);
+}
+
+.portada-subtitulo {
+  font-family: var(--fuente-principal);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-acento-suave);
+  margin-bottom: 1.5rem;
+}
+
+.portada-texto {
+  max-width: 64ch;
+  margin-inline: auto;
+  font-size: 1.25rem;
+  color: var(--color-texto-suave);
+}
+
+.portada-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+/* ----- 7. Botones ----- */
+.boton {
+  display: inline-block;
+  padding: 0.9rem 1.75rem;
+  font-family: var(--fuente-principal);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease,
+              border-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-primario {
+  background-color: var(--color-acento);
+  color: #fff;
+}
+.boton-primario:hover {
+  background-color: #b03d23;
+  color: #fff;
+}
+
+.boton-secundario {
+  background-color: transparent;
+  border-color: var(--color-texto-suave);
+  color: var(--color-texto);
+}
+.boton-secundario:hover {
+  border-color: var(--color-enlace-foco);
+  color: var(--color-enlace-foco);
+}
+
+/* ----- 8. Trayectoria: cronología visual ----- */
+.cronologia {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* Línea vertical de la cronología, creada con CSS */
+  border-left: 3px solid var(--color-acento);
+  margin-left: 1.1rem;
+}
+
+.cronologia-item {
+  position: relative;
+  padding: 0 0 2.5rem 2rem;
+  max-width: 68ch;
+}
+
+.cronologia-item::before {
+  /* Punto que marca cada hito sobre la línea temporal */
+  content: "";
+  position: absolute;
+  left: -1.85rem;
+  top: 0.4rem;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--color-acento);
+  border: 3px solid var(--color-fondo);
+  box-shadow: 0 0 0 2px var(--color-acento);
+}
+
+.cronologia-item:last-child {
+  padding-bottom: 0;
+}
+
+.cronologia-titulo {
+  font-size: 1.5rem;
+  margin-bottom: 0.4em;
+}
+
+/* Diferenciación visual entre fecha y nombre del hito */
+.cronologia-anio {
+  color: var(--color-acento-suave);
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}
+
+.cronologia-nombre {
+  color: var(--color-texto);
+}
+
+.cronologia-item p {
+  color: var(--color-texto-suave);
+  margin-bottom: 0;
+}
+
+cite {
+  font-style: italic;
+}
+
+/* ----- 9. Próximas presentaciones: tarjetas de concierto ----- */
+.conciertos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.concierto {
+  background-color: var(--color-fondo-claro);
+  border: 1px solid var(--color-borde);
+  border-top: 4px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.concierto-titulo {
+  font-family: var(--fuente-principal);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.25em;
+}
+
+.concierto-ciudad {
+  color: var(--color-texto);
+  display: inline-block;
+}
+
+.concierto-fecha {
+  color: var(--color-acento-suave);
+}
+
+.concierto-separador {
+  color: var(--color-texto-suave);
+}
+
+.concierto-recinto {
+  margin-bottom: 0;
+  color: var(--color-texto-suave);
+}
+.concierto-recinto strong {
+  color: var(--color-texto);
+}
+
+.conciertos-cierre {
+  color: var(--color-texto);
+  font-size: 1.15rem;
+}
+
+.nota-verificacion {
+  font-size: 0.95rem;
+  color: var(--color-texto-suave);
+  border: 1px dashed var(--color-borde);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  max-width: 70ch;
+}
+
+/* ----- 10. Pie de página (jerarquía secundaria) ----- */
+.pie-pagina {
+  background-color: #120b0c;
+  border-top: 1px solid var(--color-borde);
+  padding: 3rem 1.25rem 2.5rem;
+  font-size: 0.95rem;
+  color: var(--color-texto-suave);
+}
+
+.pie-contenido {
+  max-width: var(--max-ancho);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.pie-marca {
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-texto);
+  margin-bottom: 0.75rem;
+}
+
+.pie-aviso {
+  margin-bottom: 0.5rem;
+  max-width: 70ch;
+  margin-inline: auto;
+}
+
+.pie-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+}
+
+.pie-nav a {
+  color: var(--color-texto-suave);
+  text-decoration: none;
+  font-weight: 600;
+}
+.pie-nav a:hover {
+  color: var(--color-enlace-foco);
+  text-decoration: underline;
+}
+
+/* ----- 11. Diseño adaptativo (responsive) ----- */
+@media (max-width: 900px) {
+  .conciertos {
+    grid-template-columns: 1fr;   /* Tarjetas apiladas en tabletas */
+    max-width: 560px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --tamano-h2: 2rem;
+  }
+
+  body {
+    font-size: 1.05rem;
+  }
+
+  .portada {
+    padding-top: 5.5rem;
+  }
+
+  .nav-lista a {
+    padding: 0.75rem 0.8rem;
+  }
+
+  .seccion {
+    padding: 5rem 1.1rem;
+  }
+
+  .portada-acciones {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .boton {
+    text-align: center;
+  }
+
+  /* La línea temporal también se adapta a pantallas pequeñas */
+  .cronologia-item {
+    padding-left: 1.5rem;
+  }
+
+  .pie-nav ul {
+    gap: 1rem;
+  }
+}
+
+/* ----- 12. Preferencias de movimiento reducido ----- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;      /* Sin desplazamiento suave */
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
